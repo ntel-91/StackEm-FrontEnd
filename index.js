@@ -144,7 +144,7 @@ const tetromino = {
 }
 
 function createGrid(){
-    const board = document.querySelector(".item2")  
+    const board = document.querySelector(".tetris-board")  
     for (let i=0; i < gridRows; i++){
       for (let j=0; j < gridColumns; j++){
         board.insertAdjacentHTML("beforeend", `

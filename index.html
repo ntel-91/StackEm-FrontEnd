@@ -15,15 +15,21 @@
 </head>
 <body>
         <div class='gamebox'>
-            <div class='item4'>
+            <div class='header'>
                 <h2 id="game">Stack 'Em</h2>    
                 <div id='user'></div>
             </div>
             <div class='item1'>
-                <h5 id='score'>Score: <span>0</span></h5>
-                <button id="start">Start</button>    
+                <div class='game-start'>
+                    <button id="start">Start</button>    
+                </div>
+                <div class='current-game-score-box'>
+                    <div class='score'>
+                        <h5 id='score'>Score: <span>0</span></h5>
+                    </div>
+                </div>
             </div>
-            <div class='item2'></div>
+            <div class='tetris-board'></div>
             <div class='item3'>3</div>
                 <p id='highscore'></p>
             <div id='previous-games'></div>
