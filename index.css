@@ -1,0 +1,52 @@
+body {
+    display: grid;
+    grid-template-columns: 5fr 5fr;
+}
+
+.tile {
+
+    border: 1px solid #2c3e50;
+}
+
+#shape {
+    background-color: red;
+    background-repeat: no-repeat;
+    background-size: 5vw 5vw;
+    background-position: center;
+}
+
+.gamebox {
+    margin: auto;
+    border: 1px solid black;
+    width: 800px;
+    height: 700px;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: 15% auto;
+  }
+
+  .item1 {
+    background-color: #2196F3;
+  }
+  
+  .item2 {
+    background-color: rgba(2, 255, 255);
+    margin: auto;
+    width: 270px;
+    height: 540px;
+    display: grid;
+    grid-template: repeat(20, 1fr) / repeat(10, 1fr);
+  
+
+  }
+  
+  .item3 {
+    background-color: rgba(200, 255, 255)
+  }
+  
+  .item4 {
+    background-color: rgba(255, 200, 255);
+    grid-column: 1 / span 3;
+    grid-row: 1;
+  }
+  
