@@ -64,7 +64,7 @@ body {
 
 .item3 {
   display: grid;
-  grid-template-rows: 20% auto;
+  grid-template-rows: 15% auto;
 }
 
 .previous-scores-box {
@@ -72,14 +72,23 @@ body {
   margin-left: auto;
   margin-right: auto;
   width: 200px;
-  height: 100px;
+  height: 80px;
+  font-size: 15px;
+  padding: 5px 0 0 5px;
 }
 
-.high-scores-box {
+.high-score-box {
   border: 1px solid black;
   margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
   width: 200px;
-  height: 180px;
+  height: 20px;
+  font-size: 15px;
+  padding: 5px 0 0 5px;
+}
+
+#previous-games-list {
+  margin: 5px 5px 0 0;
+  padding-left: 20px;
 }

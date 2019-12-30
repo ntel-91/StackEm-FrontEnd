@@ -75,7 +75,7 @@ function renderHighScore(score){
     const highscore = document.querySelector('#highscore')
     highscore.innerHTML = ""
     highscore.insertAdjacentHTML('beforeend',`
-        Your HighScore: <span>${score}</span>
+        High Score: <span>${score}</span>
     `)
 }
 
@@ -83,9 +83,8 @@ function renderPreviousGames(games){
     let str = ''
     games.forEach((game) => str = str + `<li>${game.score} points on: ${game.created_at.slice(0,10)}</li>`)
     
-    const previousGames = document.querySelector('#previous-games')
-    previousGames.insertAdjacentHTML('afterbegin',`
-        <p>Previous Stack 'Em Scores</p>
+    const previousGames = document.querySelector('.previous-scores-box')
+    previousGames.insertAdjacentHTML('beforeend',`
         <ul id='previous-games-list'>
             ${str}
         </ul>
