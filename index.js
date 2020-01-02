@@ -6,6 +6,7 @@ let rotateDown
 let currentTetromino
 let currentTetrominoColor
 let player
+let isPlaying = true
 let intervalSpeed = 500
 let left = [{x: -1, y: 0}, {x: -1, y: 0}, {x: -1, y: 0}, {x: -1, y: 0}]
 let right = [{x: 1, y: 0}, {x: 1, y: 0}, {x: 1, y: 0}, {x: 1, y: 0}]
@@ -272,6 +273,7 @@ function rotate(){
 }
 
 function run(){
+    if (isPlaying === true) {
     shapeDescend = setInterval(function(){
         if (checkTetrominoMovePosition(down)) {  
             move(down)
@@ -286,6 +288,9 @@ function run(){
 
         }
       }, intervalSpeed)
+    } else if (isPlaying === false) {
+        clearInterval(shapeDescend)
+    }
 }
 
 function start(){
@@ -312,8 +317,17 @@ document.addEventListener('keydown', function(event){
 })
 
 document.addEventListener('click', function(event){
-    if (event.target.id === 'start'){
+    if (event.target.innerText === 'Start'){
+        event.target.innerText = 'pause'
         start()
+    } else if (event.target.innerText === 'pause'){
+        event.target.innerText = 'resume'
+        isPlaying = false
+        run()
+    } else if (event.target.innerText === 'resume') {
+        event.target.innerText = 'pause'
+        isPlaying = true
+        run()
     }
 })
 
