@@ -21,8 +21,8 @@ function renderLogin(){
     const user = document.querySelector('#user')
     user.insertAdjacentHTML('beforeend',`
         <form id="login">
-            <label for="name">Username: </label>
-            <input id='username' type="text" name="name">
+            <label for="name"> </label>
+            <input id='username' placeholder='username' type="text" name="name">
             <input type="submit" value="login">
         </form>
     `)

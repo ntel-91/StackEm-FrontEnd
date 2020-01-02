@@ -1,6 +1,18 @@
-body {
+/* body {
     display: grid;
     grid-template-columns: 5fr 5fr;
+} */
+
+.game-name {
+  font-size: 25px;
+  font-weight: bold;
+  padding-left: 15px;
+  padding-top: 10px;
+}
+
+.user-login {
+  padding-left: 15px;
+  padding-top: 5px;
 }
 
 .tile {
@@ -52,6 +64,8 @@ body {
 
 .score {
   padding-left: 10px;
+  padding-top: 8px;
+  font-size: 23px;
 }
 
 .tetris-board {
