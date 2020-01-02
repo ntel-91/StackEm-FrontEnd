@@ -76,6 +76,24 @@
   grid-template: repeat(20, 1fr) / repeat(10, 1fr);
 }
 
+.game-over {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: column;
+  background-color: #a5a5a561;
+  color: red;
+  font-weight: bold;
+  font-size: 30px;
+  width: 270px;
+  height: 540px;
+}
+
+.game-board-container {
+  position: relative;
+}
+
 .item3 {
   display: grid;
   grid-template-rows: 15% auto;

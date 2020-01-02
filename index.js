@@ -171,8 +171,18 @@ function createNewTetronimo(){
         clearInterval(shapeDescend)
         const score = document.querySelector('#score').querySelector('span')
         createNewScore(parseInt(score.innerText))
+        gameOver()
         
     }
+}
+
+function gameOver() {
+    let tetrisBoard = document.querySelector('#tetris-board')
+    tetrisBoard.insertAdjacentHTML('beforeend', `
+        <div class='game-over'>
+            <p> GAME OVER </p>
+        </div>
+    `)
 }
 
 function updateIndividualTile(position, dataId, dataAction, color){ 
