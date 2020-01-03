@@ -95,7 +95,7 @@ function renderPreviousGames(games){
 function createNewScore(score){
     const body = {
         score: score,
-        user_id: player.id
+        // user_id: player.id
     }
     fetch('http://localhost:3000/api/v1/games',{
         method: "POST",
@@ -171,8 +171,7 @@ function createNewTetronimo(){
         clearInterval(shapeDescend)
         const score = document.querySelector('#score').querySelector('span')
         createNewScore(parseInt(score.innerText))
-        gameOver()
-        
+        gameOver()    
     }
 }
 
@@ -181,8 +180,22 @@ function gameOver() {
     tetrisBoard.insertAdjacentHTML('beforeend', `
         <div class='game-over'>
             <p> GAME OVER </p>
+            <button id='restart' class='restart-button'>Restart</button>
         </div>
     `)
+}
+
+function restart() {
+    resetScore()
+    let tetrisBoard = document.querySelector('#tetris-board')
+    tetrisBoard.innerHTML = ""
+    createGrid()
+    document.querySelector('#start').innerText = 'Start'
+}
+
+function resetScore() {
+    const score = document.querySelector('#score').querySelector('span')
+    score.innerText = 0
 }
 
 function updateIndividualTile(position, dataId, dataAction, color){ 
@@ -338,7 +351,10 @@ document.addEventListener('click', function(event){
         event.target.innerText = 'pause'
         isPlaying = true
         run()
+    } else if (event.target.id === 'restart') {
+        restart()
     }
 })
+
 
 createGrid()
