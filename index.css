@@ -81,13 +81,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: column;
+  flex-direction: column;
   background-color: #a5a5a561;
   color: red;
   font-weight: bold;
   font-size: 30px;
   width: 270px;
   height: 540px;
+}
+
+.restart-button {
+  background-color: #150f13; 
+  border-radius: 5px;
+  border: none;
+  outline: 0px;
+  color: white;
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
 }
 
 .game-board-container {
@@ -100,12 +116,11 @@
 }
 
 .button1 {
-  background-color: #150f1361; /* Green */
+  background-color: #150f1361;
   border-radius: 5px;
   border: none;
   outline: 0px;
   color: white;
-  /* padding: 14px 45px; */
   width: 120px;
   height: 40px;
   text-align: center;
