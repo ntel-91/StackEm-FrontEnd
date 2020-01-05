@@ -82,7 +82,7 @@ function renderHighScore(score){
 
 function renderPreviousGames(games){
     let str = ''
-    games.forEach((game) => str = str + `<li>${game.score} points on: ${game.created_at.slice(0,10)}</li>`)
+    games.forEach((game) => str = str + `<li>${game.score}: ${game.date} at ${game.time}</li>`)
     
     const previousGames = document.querySelector('.previous-scores-box')
     previousGames.insertAdjacentHTML('beforeend',`
@@ -95,7 +95,7 @@ function renderPreviousGames(games){
 function createNewScore(score){
     const body = {
         score: score,
-        // user_id: player.id
+        user_id: player.id
     }
     fetch('http://localhost:3000/api/v1/games',{
         method: "POST",
@@ -107,10 +107,11 @@ function createNewScore(score){
     })
     .then(res => res.json())
     .then(function(data){
+        console.log(data.created_at)
         if (getCurrentHighScore() < data.score){
             renderHighScore(data.score)
         }
-        updatePreviousGames(data.score, data.created_at.slice(0,10))
+        updatePreviousGames(data.score, data.date, data.time)
     })
 }
 
@@ -119,11 +120,11 @@ function getCurrentHighScore(){
     return parseInt(highscore.innerText)   
 }
 
-function updatePreviousGames(score, played){
+function updatePreviousGames(score, date, time){
     const gamesList = document.querySelector('#previous-games-list')
     gamesList.lastElementChild.remove()
     gamesList.insertAdjacentHTML('afterbegin',`
-        <li>${score} points on: ${played}</li>
+        <li>${score}: ${date} at ${time}</li>
     `)
 }
 
