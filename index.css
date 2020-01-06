@@ -74,6 +74,10 @@
   height: 540px;
   display: grid;
   grid-template: repeat(20, 1fr) / repeat(10, 1fr);
+  border-style: solid;
+  border-radius: 5px;
+  border-width: 5px;
+  background-color: black
 }
 
 .game-over {

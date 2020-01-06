@@ -61,6 +61,7 @@ function loginButton(){
                 renderHighScore(Math.max.apply(null, scores))
                 renderPreviousGames(previousGames)
             })
+        renderStartButton()
         }
     })
 }
@@ -83,8 +84,22 @@ function logout() {
     document.querySelector('#highscore').innerHTML = "High Score: "
     renderLogin()
     loginButton()
-    restart()
-    
+    removeStartButton()
+    restart()  
+}
+
+function renderStartButton() {
+    const startBox = document.querySelector('#game-start-box')
+    startBox.insertAdjacentHTML('beforeend',`
+        <button id="start" class='button1'>
+            Start
+        </button>
+    `)
+}
+
+function removeStartButton() {
+    const startBox = document.querySelector('#game-start-box')
+    startBox.innerHTML = ""
 }
 
 function renderHighScore(score){
