@@ -28,9 +28,11 @@
 
 .gamebox {
     margin: auto;
-    border: 1px solid black;
+    margin-top: 50px;
+    border: 2px solid black;
     width: 800px;
-    height: 650px;
+    height: 670px;
+    background-color: #ececec;
     display: grid;
     grid-template-columns: 30% 40% 30%;
     grid-template-rows: 15% auto;
@@ -59,7 +61,7 @@
   margin-right: auto;
   width: 120px;
   height: 40px;
-
+  border-radius: 5px;
 }
 
 .score {
@@ -70,6 +72,7 @@
 
 .tetris-board {
   margin: auto;
+  margin-top: 0px;
   width: 270px;
   height: 540px;
   display: grid;
@@ -143,6 +146,7 @@
   height: 80px;
   font-size: 15px;
   padding: 5px 0 0 5px;
+  border-radius: 5px;
 }
 
 .high-score-box {
@@ -152,6 +156,7 @@
   margin-right: auto;
   width: 200px;
   height: 20px;
+  border-radius: 5px;
   font-size: 15px;
   padding: 5px 0 0 5px;
 }
