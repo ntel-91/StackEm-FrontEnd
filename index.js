@@ -16,10 +16,12 @@ NodeList.prototype.forEach = Array.prototype.forEach
 NodeList.prototype.map = Array.prototype.map
 NodeList.prototype.filter = Array.prototype.filter
 
-//////// render user information 
+/////////////////////////////////////////////////////////////////////////////////////
+//////// render user information
 
 function renderLogin(){
     const user = document.querySelector('#user')
+    user.innerHTML = ""
     user.insertAdjacentHTML('beforeend',`
         <form id="login">
             <label for="name"> </label>
@@ -31,7 +33,6 @@ function renderLogin(){
 
 
 renderLogin()
-
 
 function loginButton(){
     const form = document.querySelector('#login')
@@ -69,7 +70,21 @@ loginButton()
 function renderUsername(user){
     const userLogin = document.querySelector('#user')
     userLogin.innerHTML = ""
-    userLogin.insertAdjacentHTML('beforeend',`Welcome, ${user}`)
+    userLogin.insertAdjacentHTML('beforeend',`
+        <div>
+            Welcome, ${user}
+            <button id='logout'>logout</button>
+        </div>`
+    )
+}
+
+function logout() {
+    document.querySelector('.previous-scores-box').innerHTML = "Previous Stack 'Em Scores:"
+    document.querySelector('#highscore').innerHTML = "High Score: "
+    renderLogin()
+    loginButton()
+    restart()
+    
 }
 
 function renderHighScore(score){
@@ -107,7 +122,6 @@ function createNewScore(score){
     })
     .then(res => res.json())
     .then(function(data){
-        console.log(data.created_at)
         if (getCurrentHighScore() < data.score){
             renderHighScore(data.score)
         }
@@ -128,6 +142,7 @@ function updatePreviousGames(score, date, time){
     `)
 }
 
+////////////////////////////////////////////////////////////////////////////////////
 //////////////////// game features
 
 function generateRandom(){
@@ -341,19 +356,21 @@ document.addEventListener('keydown', function(event){
 })
 
 document.addEventListener('click', function(event){
-    if (event.target.innerText === 'Start'){
+    if (event.target.innerText === 'Start' && event.target.id === 'start'){
         event.target.innerText = 'pause'
         start()
-    } else if (event.target.innerText === 'pause'){
+    } else if (event.target.innerText === 'pause' && event.target.id === 'start'){
         event.target.innerText = 'resume'
         isPlaying = false
         run()
-    } else if (event.target.innerText === 'resume') {
+    } else if (event.target.innerText === 'resume' && event.target.id === 'start') {
         event.target.innerText = 'pause'
         isPlaying = true
         run()
     } else if (event.target.id === 'restart') {
         restart()
+    } else if (event.target.id === 'logout') {
+        logout()
     }
 })
 
