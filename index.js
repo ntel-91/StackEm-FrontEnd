@@ -42,7 +42,7 @@ function loginButton(){
             fetch(`http://localhost:3000/api/v1/users`)
             .then(res => res.json())
             .then(function(data){
-                
+                console.log(data)
                 player = data.find(function(user){
                     return user.username === event.target.name.value
                 })
@@ -73,7 +73,7 @@ function renderUsername(user){
     userLogin.innerHTML = ""
     userLogin.insertAdjacentHTML('beforeend',`
         <div>
-            Welcome, ${user}
+            Welcome, ${user}!
             <button id='logout'>logout</button>
         </div>`
     )
