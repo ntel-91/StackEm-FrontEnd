@@ -42,8 +42,7 @@ function loginButton(){
             fetch(`http://localhost:3000/api/v1/users`)
             .then(res => res.json())
             .then(function(data){
-                console.log(data)
-                player = data.find(function(user){
+                player = data.users.find(function(user){
                     return user.username === event.target.name.value
                 })
                 
