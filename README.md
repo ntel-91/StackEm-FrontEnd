@@ -1,6 +1,6 @@
 # StackEm-FrontEnd
 
-![Welcome to StackEm!](https://github.com/ntel-91/StackEm_frontend/blob/master/images/StackEm-currentgame.png?raw=true)
+![Welcome to StackEm!](./images/StackEm_currentgame.png)
 _Developed by Nick Telenson_ 
 
 # Preview
